@@ -1,0 +1,9 @@
+title: Youtube
+owner_name: Napoléon Bonaparte Officiel
+github_username: M8tth3, kinetekenergy, BearytheGreenBear, aashrayr, trevorhuang1
+github_repo: "MKAAT-frontend"
+baseurl: "/MKAAT-frontend"
+
+plugins:
+- jekyll-remote-theme
+future: true

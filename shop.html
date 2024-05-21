@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: #1c1c1e;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        header {
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+        }
+
+        /* top nav bar stuff dont worry bout this for now */
+        .inputField {
+            width: 70%;
+            background-color: #2c2c2e;
+            padding: 1em;
+            border: none;
+            border-left: 1px solid rgba(58, 58, 60, 0.3);
+            border-top: 1px solid rgba(58, 58, 60, 0.3);
+            border-radius: 5000px;
+            box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            font-family: Montserrat, sans-serif;
+            font-weight: 500;
+
+            transition: all 0.2s ease-in-out;
+
+            &[type="upload"] {
+                width: 10%;
+
+                &:hover {
+                    cursor: pointer;
+                    background: rgba(150, 137, 137, 0.2);
+                }
+
+                &:active {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+
+        h1,
+        h2 {
+            color: white;
+            text-align: center;
+        }
+
+        .ingredient-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .ingredient-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #FFF2B0;
+            color: #282c34;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- navbar -->
+    <header>
+        <a href="/MKAAT-frontend/" class="inputField" type="button">Home</a>
+        <input type="text" id="query" class="inputField" placeholder="Search">
+        <a href="/MKAAT-frontend/upload" class="inputField" type="button">Upload</a>
+        <a href="/MKAAT-frontend/login" class="inputField" type="button">Login</a>
+    </header>
+
+    <hr>
+
+    <h1>Shop</h1>
+    <div class="ingredient-container">
+        <button class="ingredient-button" onclick="purchaseIngredient('5mins', 5)">
+            <i class="fa-solid fa-ban"></i>
+            Adblock 5 Mins
+            <div class="points" id="adblock-5min">(${adblock5.toFixed(2)} points)</div>
+        </button>
+        <button class="ingredient-button" onclick="purchaseIngredient('10mins', 10)">
+            <i class="fa-solid fa-ban"></i>
+            Adblock 10 mins
+            <div class="points" id="adblock-10min">(${adblock10.toFixed(2)} points)</div>
+        </button>
+        <button class="ingredient-button" onclick="purchaseIngredient('30mins', 30)">
+            <i class="fa-solid fa-ban"></i>
+            Adblock 30 mins
+            <div class="points" id="adblock-30min">(${adblock30.toFixed(2)} points)</div>
+        </button>
+        <button class="ingredient-button" onclick="purchaseIngredient('hd', 1080)">
+            <span class="material-symbols-outlined">
+                hd
+            </span>
+            1080p Video
+            <div class="points" id="1080p">(${tenEighty.toFixed(2)} points)</div>
+        </button>
+        <button class="ingredient-button" onclick="purchaseIngredient('banana', 5000)">
+            <img src="banana.png" alt="banana" style="height: 75px; width: 100px;">
+            banana
+            <div class="points" id="banana">(${banana.toFixed(2)} points)</div>
+        </button>
+    </div>
+
+
+    <script src="js/shop.js"></script>
+</body>
+
+</html>
