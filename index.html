@@ -7,14 +7,16 @@
     <title>Home</title>
     <style>
         body {
-            background: #1c1c1e;
+            background: #2C2C2E;
             font-family: 'Montserrat', sans-serif;
+            color: #F8F8F2;
         }
 
         header {
-            color: white;
+            color: #F8F8F2;
             padding: 10px;
             text-align: center;
+            background-color: #282828;
         }
 
         a {
@@ -24,78 +26,76 @@
         nav {
             padding: 10px;
             text-align: center;
+            background-color: #282828;
         }
 
         nav a {
             text-decoration: none;
-            color: white;
-
+            color: #F8F8F2;
             cursor: pointer;
-            background-color: #2c2c2e;
+            background-color: #3C3C3E;
             padding: 10px 20px;
-
             border-radius: 10px;
-
             text-align: center;
             transition: all 0.2s ease-in-out;
+        }
 
-            &:hover {
-                background-color: #48484a;
-            }
+        nav a:hover {
+            background-color: #5C5C5E;
         }
 
         article {
             margin-bottom: 20px;
+            padding: 20px;
+            background-color: #3C3C3E;
+            border-radius: 10px;
+            border: 1px solid #484848;
         }
 
-        a,
-        span {
-            color: white;
+        a, span {
+            color: #F8F8F2;
         }
 
         .inputField {
             width: 70%;
-            background-color: #2c2c2e;
+            background-color: #3C3C3E;
             padding: 1em;
             border: none;
-            border-left: 1px solid rgba(58, 58, 60, 0.3);
-            border-top: 1px solid rgba(58, 58, 60, 0.3);
+            border-left: 1px solid rgba(255, 255, 0, 0.3);
+            border-top: 1px solid rgba(255, 255, 0, 0.3);
             border-radius: 5000px;
             box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-            color: #fff;
+            color: #F8F8F2;
             font-family: Montserrat, sans-serif;
             font-weight: 500;
-
             transition: all 0.2s ease-in-out;
+        }
 
-            &[type="button"] {
-                width: 10%;
+        .inputField[type="button"] {
+            width: 10%;
+        }
 
-                &:hover {
-                    cursor: pointer;
-                    background: rgba(255, 255, 255, 0.2);
-                }
+        .inputField[type="button"]:hover {
+            cursor: pointer;
+            background: rgba(255, 255, 0, 0.2);
+        }
 
-                &:active {
-                    background: rgba(255, 255, 255, 0.2);
-                }
-            }
+        .inputField[type="button"]:active {
+            background: rgba(255, 255, 0, 0.2);
         }
 
         .video-item {
             height: 300px;
             cursor: pointer;
-
             border-radius: 20px;
-            border-left: 1px solid rgba(58, 58, 60, 0.3);
-            border-top: 1px solid rgba(58, 58, 60, 0.3);
-
+            border-left: 1px solid rgba(255, 255, 0, 0.3);
+            border-top: 1px solid rgba(255, 255, 0, 0.3);
             text-align: center;
             transition: all 0.2s ease-in-out;
+        }
 
-            &:hover {
-                box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
-            }
+        .video-item:hover {
+            box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
         }
 
         .video {
@@ -114,9 +114,13 @@
         .grid-item {
             padding: 20px;
             height: 30vh;
+            background-color: #3C3C3E;
+            border-radius: 10px;
+            border: 1px solid #484848;
         }
     </style>
 </head>
+
 
 <body>
     <link rel="preconnect" href="https://fonts.gstatic.com">
