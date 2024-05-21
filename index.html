@@ -5,111 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <style>
-        body {
-            background: black;
-            color: white;
-            font-family: -apple-system, system-ui, BlinkMacSystemFont;
-            font-weight: 600;
-        }
-
-        header, nav {
-            padding: 10px;
-            text-align: center;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            cursor: pointer;
-            background-color: #222123;
-            padding: 10px 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.2s ease-in-out;
-        }
-
-        nav a:hover {
-            background-color: #5C5C5E;
-        }
-
-        article {
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: #222123;
-            border-radius: 10px;
-            border: 1px solid #484848;
-        }
-
-        a,
-        span {
-            color: white;
-        }
-
-        .inputField {
-            width: 70%;
-            background-color: #222123;
-            padding: 1em;
-            border: none;
-            border-left: 1px solid rgba(82, 82, 82, 0.3);
-            border-top: 1px solid rgba(82, 82, 82, 0.3);
-            border-radius: 5000px;
-            color: white;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .inputField[type="button"] {
-            width: 10%;
-        }
-
-        .inputField[type="button"]:hover {
-            cursor: pointer;
-            background: #5C5C5E;
-        }
-
-        .inputField[type="button"]:active {
-            background: #222123;
-        }
-
-        .video-item {
-            height: 300px;
-            cursor: pointer;
-            border-radius: 20px;
-            border-left: 1px solid rgba(82, 82, 82, 0.3);
-            border-top: 1px solid rgba(82, 82, 82, 0.3);
-            text-align: center;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .video-item:hover {
-            box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
-        }
-
-        .video {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-        }
-
-        .videoGrid {
-            display: grid;
-            gap: 50px;
-            grid-template-columns: repeat(3, 1fr);
-            padding: 50px;
-        }
-
-        .grid-item {
-            padding: 20px;
-            height: 30vh;
-            background-color: #3C3C3E;
-            border-radius: 10px;
-            border: 1px solid #484848;
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 
@@ -123,10 +19,10 @@
 
     <!-- navigation chips -->
     <nav>
-        <a href="#" id="gaming">Gaming</a>
-        <a href="#" id="sports">Sports</a>
-        <a href="#" id="music">Music</a>
-        <a href="#" id="edu">Educational</a>
+        <a href="#">Tab 1</a>
+        <a href="#">Tab 2</a>
+        <a href="#">Tab 3</a>
+        <a href="#">Tab 4</a>
     </nav>
 
     <div class="videoGrid"></div>
