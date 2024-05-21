@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+`document.addEventListener("DOMContentLoaded", function () {
 	// reference to the buttons
 	var deleteAccount = document.getElementById("deleteAccount");
 	var changeEmail = document.getElementById("changeEmail");

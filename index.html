@@ -7,33 +7,26 @@
     <title>Home</title>
     <style>
         body {
-            background: #2C2C2E;
-            font-family: 'Montserrat', sans-serif;
-            color: #F8F8F2;
+            background: black;
+            color: white;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont;
+            font-weight: 600;
         }
 
-        header {
-            color: #F8F8F2;
+        header, nav {
             padding: 10px;
             text-align: center;
-            background-color: #282828;
         }
 
         a {
             text-decoration: none;
         }
 
-        nav {
-            padding: 10px;
-            text-align: center;
-            background-color: #282828;
-        }
-
         nav a {
             text-decoration: none;
-            color: #F8F8F2;
+            color: white;
             cursor: pointer;
-            background-color: #3C3C3E;
+            background-color: #222123;
             padding: 10px 20px;
             border-radius: 10px;
             text-align: center;
@@ -47,27 +40,25 @@
         article {
             margin-bottom: 20px;
             padding: 20px;
-            background-color: #3C3C3E;
+            background-color: #222123;
             border-radius: 10px;
             border: 1px solid #484848;
         }
 
-        a, span {
-            color: #F8F8F2;
+        a,
+        span {
+            color: white;
         }
 
         .inputField {
             width: 70%;
-            background-color: #3C3C3E;
+            background-color: #222123;
             padding: 1em;
             border: none;
-            border-left: 1px solid rgba(255, 255, 0, 0.3);
-            border-top: 1px solid rgba(255, 255, 0, 0.3);
+            border-left: 1px solid rgba(82, 82, 82, 0.3);
+            border-top: 1px solid rgba(82, 82, 82, 0.3);
             border-radius: 5000px;
-            box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-            color: #F8F8F2;
-            font-family: Montserrat, sans-serif;
-            font-weight: 500;
+            color: white;
             transition: all 0.2s ease-in-out;
         }
 
@@ -77,19 +68,19 @@
 
         .inputField[type="button"]:hover {
             cursor: pointer;
-            background: rgba(255, 255, 0, 0.2);
+            background: #5C5C5E;
         }
 
         .inputField[type="button"]:active {
-            background: rgba(255, 255, 0, 0.2);
+            background: #222123;
         }
 
         .video-item {
             height: 300px;
             cursor: pointer;
             border-radius: 20px;
-            border-left: 1px solid rgba(255, 255, 0, 0.3);
-            border-top: 1px solid rgba(255, 255, 0, 0.3);
+            border-left: 1px solid rgba(82, 82, 82, 0.3);
+            border-top: 1px solid rgba(82, 82, 82, 0.3);
             text-align: center;
             transition: all 0.2s ease-in-out;
         }
@@ -123,13 +114,10 @@
 
 
 <body>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- search and upload and home -->
     <header>
         <a href="/frontend-MKAAT/" class="inputField" type="button">Home</a>
         <input type="text" id="query" class="inputField" placeholder="Search">
-        <a href="/frontend-MKAAT/upload" class="inputField" type="button">Upload</a>
         <a href="/frontend-MKAAT/login" class="inputField" type="button">Login</a>
     </header>
 
@@ -141,7 +129,6 @@
         <a href="#" id="edu">Educational</a>
     </nav>
 
-    <hr>
     <div class="videoGrid"></div>
 
     <script src="js/index.js"></script>
