@@ -10,7 +10,7 @@
     animation: spin 2s linear infinite;
     z-index: 999;
 
-    position: absolute;
+    position: center;
     top: 40%;
     left: 40%;
     transition: opacity 0.5s ease;
