@@ -10,9 +10,9 @@
     animation: spin 2s linear infinite;
     z-index: 999;
 
-    position: center;
+    position: absolute;
     top: 40%;
-    left: 40%;
+    left: 45%;
     transition: opacity 0.5s ease;
 }
 
@@ -24,4 +24,18 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+#body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Ensure it takes full width */
+    height: 100%;
+    /* Ensure it takes full height */
+    overflow: hidden;
+    /* Prevents content from overflowing */
+    filter: blur(0px);
+    transition: filter 0.5s ease;
 }

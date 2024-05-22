@@ -9,45 +9,47 @@
 </head>
 
 <body>
-    <div class="container">
-
-        <!-- login form -->
-        <form method="POST" id="myForm">
-            <p>Signup</p>
-
-            <!-- username and password -->
-            <input type="text" id="nameField" name="name" placeholder="Full Name"><br>
-            <input type="text" id="dobField" name="dob" placeholder="Date of Birth (mm-dd-yyyy)"><br>
-            <input type="text" id="usernameField" name="username" placeholder="Username"><br>
-            <input type="text" id="emailField" name="email" placeholder="Email"><br>
-            <input type="password" id="passwordField" name="password" placeholder="Password"><br>
-
-            <!-- submit button -->
-            <input type="hidden" id="csrfTokenField" name="csrf_token" value="">
-            <input type="submit" value="Create Account"><br>
-
-            <a href="/frontend-MKAAT/">Return to Home</a>
-        </form>
-
-        <!-- square things in the background -->
-        <div class="drops">
-            <div class="drop drop-1"></div>
-            <div class="drop drop-2"></div>
-            <div class="drop drop-3"></div>
-            <div class="drop drop-4"></div>
-            <div class="drop drop-5"></div>
+    <div id="body">
+        <div class="container">
+    
+            <!-- login form -->
+            <form method="POST" id="myForm">
+                <p>Signup</p>
+    
+                <!-- username and password -->
+                <input type="text" id="nameField" name="name" placeholder="Full Name"><br>
+                <input type="text" id="dobField" name="dob" placeholder="Date of Birth (mm-dd-yyyy)"><br>
+                <input type="text" id="usernameField" name="username" placeholder="Username"><br>
+                <input type="text" id="emailField" name="email" placeholder="Email"><br>
+                <input type="password" id="passwordField" name="password" placeholder="Password"><br>
+    
+                <!-- submit button -->
+                <input type="hidden" id="csrfTokenField" name="csrf_token" value="">
+                <input type="submit" value="Create Account"><br>
+    
+                <a href="/frontend-MKAAT/">Return to Home</a>
+            </form>
+    
+            <!-- square things in the background -->
+            <div class="drops">
+                <div class="drop drop-1"></div>
+                <div class="drop drop-2"></div>
+                <div class="drop drop-3"></div>
+                <div class="drop drop-4"></div>
+                <div class="drop drop-5"></div>
+            </div>
         </div>
-    </div>
-
-    <!-- account creation success (200) -->
-    <div class="container" id="popupWindow200" style="display: none;">
-        <div class="error">
-            <p><strong>Account Created</strong></p>
-            <input id="closeButton200" type="submit" value="Go to Dashboard">
+    
+        <!-- account creation success (200) -->
+        <div class="container" id="popupWindow200" style="display: none;">
+            <div class="error">
+                <p><strong>Account Created</strong></p>
+                <input id="closeButton200" type="submit" value="Go to Dashboard">
+            </div>
         </div>
+    
+        <script src="js/signup.js"></script>
     </div>
-
-    <script src="js/signup.js"></script>
 </body>
 
 </html>
