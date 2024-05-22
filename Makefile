@@ -9,22 +9,13 @@ SHELL = /bin/bash
 # Phony Targets, makefile housekeeping for below definitions
 .PHONY: default server convert clean stop
 
-# List all .ipynb files in the _notebooks directory
-# NOTEBOOK_FILES := $(wildcard _notebooks/*.ipynb)
-
-# Specify the target directory for the converted Markdown files
-# DESTINATION_DIRECTORY = _posts
-# MARKDOWN_FILES := $(patsubst _notebooks/%.ipynb,$(DESTINATION_DIRECTORY)/%_IPYNB_2_.md,$(NOTEBOOK_FILES))
-
-# Call server, then verify and start logging
-# ...
 
 # Call server, then verify and start logging
 default: server
 	@echo "Terminal logging starting, watching server..."
-	@# tail and awk work together to extract Jekyll regeneration messages
-	@# When a _notebook is detected in the log, call make convert in the background
-	@# Note: We use the "if ($$0 ~ /_notebooks\/.*\.ipynb/) { system(\"make convert &\") }" to call make convert
+# tail and awk work together to extract Jekyll regeneration messages
+# When a _notebook is detected in the log, call make convert in the background
+# Note: We use the "if ($$0 ~ /_notebooks\/.*\.ipynb/) { system(\"make convert &\") }" to call make convert
 	@(tail -f $(LOG_FILE) | awk '/Server address: http:\/\/127.0.0.1:$(PORT)\/$(REPO_NAME)\// { serverReady=1 } \
 	serverReady && /^ *Regenerating:/ { regenerate=1 } \
 	regenerate { \
