@@ -48,11 +48,6 @@ article {
     transition: all 0.2s ease-in-out;
 }
 
-/* 
-        .inputField[type="button"] {
-            width: 10%;
-        } */
-
 .inputField[type="button"]:hover {
     cursor: pointer;
     background: #5C5C5E;

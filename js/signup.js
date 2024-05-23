@@ -15,7 +15,6 @@ function sucess() {
 async function submitForm() {
 	// get the elements (username, password, etc)
 	const name = document.getElementById("nameField").value; // full name
-	const dob = document.getElementById("dobField").value; // date of birth
 	const uid = document.getElementById("usernameField").value; // username
 	const email = document.getElementById("emailField").value; // email
 	const password = document.getElementById("passwordField").value; // password
@@ -44,7 +43,6 @@ async function submitForm() {
 				name,
 				uid,
 				password,
-				dob,
 				email,
 				preferences,
 			}), // convert payload to JSON
