@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+    button {
+        background-color: darkgray;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +32,10 @@
 
         <!-- navigation chips -->
         <nav>
-            <a href="#">Tab 1</a>
-            <a href="#">Tab 2</a>
-            <a href="#">Tab 3</a>
-            <a href="#">Tab 4</a>
+            <button class="navButton">Best Anime By Relevancy</button>
+            <button class="navButton">Best Anime by Rating</button>
+            <button class="navButton">Best Anime voted by [project name]</button>
+            <button class="navButton">About [project name]</button>
         </nav>
 
         <div class="videoGrid"></div>
