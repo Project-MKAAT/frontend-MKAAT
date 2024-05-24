@@ -71,13 +71,7 @@ async function submitForm() {
 			if (loginResponse.status === 401) {
 				// wrong creds
 				console.log(loginResponse.status);
-
-				// below is the POPUP version of the error
 				loginFailure(); //popup window
-
-				// below is the FULL PAGE version of the error
-				// window.location.href = "./401.html"
-				// window.location.replace("./401.html")
 			} else if (loginResponse.status === 403) {
 				// wrong perms
 				console.log(loginResponse.status);

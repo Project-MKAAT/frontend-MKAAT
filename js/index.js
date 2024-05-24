@@ -6,6 +6,7 @@ function clearVideos() {
 		videoGrid.removeChild(videoGrid.firstChild);
 	}
 }
+
 function renderVideos(videos, query = "", genre = "") {
 	const videoGrid = document.querySelector(".videoGrid");
 	const qlist = query.split(" ");
@@ -253,6 +254,7 @@ form.addEventListener("keypress", async (event) => {
 		}
 	}
 });
+
 const gaming = document.getElementById("gaming");
 gaming.addEventListener("click", async () => {
 	event.preventDefault(); // Prevent default form submission behavior
