@@ -11,18 +11,17 @@
 <body>
     <div class="container">
         <form method="POST" id="myForm">
-            <p>Login</p>
+            <p>Submit Rating</p>
 
             <!-- username and password -->
-            <input type="text" id="usernameField" name="username" placeholder="Username"><br>
-            <input type="password" id="passwordField" name="password" placeholder="Password"><br>
+            <input type="number" id="usernameField" name="username" placeholder="Rating"><br>
 
             <!-- submit button -->
             <input type="hidden" id="csrfTokenField" name="csrf_token" value="">
-            <input type="submit" value="Sign in"><br>
+            <input type="submit" value="Submit Rating"><br>
 
             <!-- signup and home -->
-            <a href="/frontend-MKAAT/signup">Create Account</a><br>
+            <a href="/frontend-MKAAT/login">Log In</a><br>
             <a href="/frontend-MKAAT/">Return to Home</a>
         </form>
 
@@ -40,7 +39,7 @@
     <div class="container" id="popupWindow401" style="display: none;">
         <div class="error">
             <p><strong>401</strong></p>
-            <p>Login Failed - Incorrect Credentials</p>
+            <p>Rating Creation Failed - You may need to log in.</p>
             <input id="closeButton401" type="submit" value="Close">
         </div>
     </div>
@@ -49,7 +48,7 @@
     <div class="container" id="popupWindow403" style="display: none;">
         <div class="error">
             <p><strong>403</strong></p>
-            <p>Wrong Permissions - You don't have permission to do that.</p>
+            <p>Wrong Permissions - You don't have permission to do that (you may need to log in).</p>
             <input id="closeButton403" type="submit" value="Close">
         </div>
     </div>
@@ -57,12 +56,12 @@
     <!-- login success (200) -->
     <div class="container" id="popupWindow200" style="display: none;">
         <div class="error">
-            <p><strong>Login Success</strong></p>
+            <p><strong>Rating Created!</strong></p>
             <input id="closeButton200" type="submit" value="Return to Home">
         </div>
     </div>
 
-    <script src="js/login.js"></script>
+    <script src="js/rating.js"></script>
 </body>
 
 </html>
