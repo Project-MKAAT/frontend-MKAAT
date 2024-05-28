@@ -79,15 +79,9 @@ article {
 }
 
 .video-item {
-    height: 300px;
     cursor: pointer;
     border-radius: 20px;
-    text-align: center;
     transition: all 0.2s ease-in-out;
-}
-
-.video-item:hover {
-    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
 }
 
 .video {
@@ -98,14 +92,13 @@ article {
 
 .videoGrid {
     display: grid;
-    gap: 50px;
-    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
     padding: 50px;
 }
 
 .grid-item {
     padding: 20px;
-    height: 30vh;
     background-color: #3C3C3E;
     border-radius: 10px;
     border: 1px solid #484848;
