@@ -5,7 +5,6 @@ body {
     font-weight: 600;
 }
 
-header,
 nav {
     padding: 10px;
     text-align: center;
@@ -13,17 +12,6 @@ nav {
 
 a, button {
     text-decoration: none;
-}
-
-nav a, nav button {
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    background-color: #222123;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
 }
 
 nav a:hover {

@@ -1,4 +1,13 @@
-function loadShows(shows, query = "", genre = "") {
+// thumbnail link thing
+function clearShows() {
+	const videoGrid = document.querySelector(".videoGrid");
+	// Remove all child elements from the videoGrid
+	while (videoGrid.firstChild) {
+		videoGrid.removeChild(videoGrid.firstChild);
+	}
+}
+
+function loadShows(shows) {
 	const videoGrid = document.querySelector(".videoGrid");
 	shows.forEach((show) => {
 		const showItem = document.createElement("div");
@@ -49,31 +58,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 	}
 });
 
-// getting all the buttons
-async function rating() {
+// sort shows
+async function sort(criteria, isReversed) {
 	try {
-		const apiUrl = "http://127.0.0.1:8069/api/anime/getsorted";
+		clearShows();
 
-		const response = await fetch(apiUrl, {
-			method: "POST",
-			credentials: "include",
-			headers: {
-				"Content-Type": "application/json",
-				"Access-Control-Allow-Origin": "http://127.0.0.1:4100",
-				"Access-Control-Allow-Credentials": "true",
-			},
-			body: JSON.stringify({ criteria: "rating", isReversed: "True" }), // convert payload to JSON
-		});
-
-		const shows = await response.json();
-		loadShows(shows);
-	} catch (error) {
-		console.error("Error loading videos:", error);
-	}
-}
-
-async function userRating() {
-	try {
 		const apiUrl = "http://127.0.0.1:8069/api/anime/getsorted";
 
 		const response = await fetch(apiUrl, {
@@ -85,8 +74,8 @@ async function userRating() {
 				"Access-Control-Allow-Credentials": "true",
 			},
 			body: JSON.stringify({
-				criteria: "userRating",
-				isReversed: "True",
+				criteria: criteria,
+				isReversed: isReversed,
 			}), // convert payload to JSON
 		});
 
