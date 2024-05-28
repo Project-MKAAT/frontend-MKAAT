@@ -1,19 +1,6 @@
-// thumbnail link thing
-function clearVideos() {
-	const videoGrid = document.querySelector(".videoGrid");
-	// Remove all child elements from the videoGrid
-	while (videoGrid.firstChild) {
-		videoGrid.removeChild(videoGrid.firstChild);
-	}
-}
-
 function renderVideos(videos, query = "", genre = "") {
 	const videoGrid = document.querySelector(".videoGrid");
 	videos.forEach((video) => {
-		if (video["genre"] == null) {
-			return;
-		}
-		if (video["genre"].toLowerCase() == genre) {
 			const videoItem = document.createElement("div");
 			videoItem.classList.add("grid-item");
 			videoItem.classList.add("video-item");
@@ -51,37 +38,18 @@ function renderVideos(videos, query = "", genre = "") {
 
 			// Append the videoItem to the videoGrid
 			videoGrid.appendChild(videoItem);
-		}
 	});
 }
 
 // Load videos when the page is loaded
 document.addEventListener("DOMContentLoaded", async () => {
 	try {
-		const apiUrl = "http://127.0.0.1:8069/api/video";
+		const apiUrl = "http://127.0.0.1:8069/api/anime/";
 		const response = await fetch(apiUrl);
 		const videos = await response.json();
 		renderVideos(videos);
-	} catch (error) {
+	} 
+	catch (error) {
 		console.error("Error loading videos:", error);
-	}
-	uid = localStorage.getItem("uid");
-	console.log(uid);
-});
-
-const form = document.getElementById("query");
-form.addEventListener("keypress", async (event) => {
-	if (event.key === "Enter") {
-		event.preventDefault(); // Prevent default form submission behavior
-		try {
-			const apiUrl = "http://127.0.0.1:8069/api/video";
-			const response = await fetch(apiUrl);
-			const videos = await response.json();
-			const query = document.getElementById("query").value;
-			clearVideos();
-			renderVideos(videos, query);
-		} catch (error) {
-			console.error("Error loading videos:", error);
-		}
 	}
 });
