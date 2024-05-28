@@ -79,7 +79,6 @@ article {
 }
 
 .video-item {
-    cursor: pointer;
     border-radius: 20px;
     transition: all 0.2s ease-in-out;
 }
