@@ -42,8 +42,8 @@ function loginSuccess() {
 
 async function submitForm() {
 	// get the elements (username, password, etc)
-	const uid = document.getElementById("usernameField").value;
-	const password = document.getElementById("passwordField").value;
+	const show = document.getElementById("showField").value;
+	const rating = document.getElementById("ratingField").value;
 	var form = document.getElementById("myForm");
 
 	try {
@@ -63,7 +63,7 @@ async function submitForm() {
 				"Access-Control-Allow-Origin": "http://127.0.0.1:4100",
 				"Access-Control-Allow-Credentials": "true",
 			},
-			body: JSON.stringify({ uid, password }), // convert payload to JSON
+			body: JSON.stringify({ show, rating }), // convert payload to JSON
 		});
 
 		// error occured and login didn't work
@@ -82,13 +82,7 @@ async function submitForm() {
 		}
 		// login worked
 		else {
-			// Extract the token from cookies
-
-			// Optionally, you can also store other data if needed
-			localStorage.setItem("uid", uid);
-			localStorage.setItem("loggedIn", true);
-
-			console.log("Login successful");
+			console.log("Rating added");
 			loginSuccess(); //popup window
 		}
 	} catch (error) {
