@@ -42,51 +42,53 @@ function loginSuccess() {
 
 async function submitForm() {
 	// get the elements (username, password, etc)
-	const show = document.getElementById("showField").value;
+	const title = document.getElementById("showField").value;
 	const rating = document.getElementById("ratingField").value;
-	var form = document.getElementById("myForm");
 
-	try {
-		//const apiUrl = "https://whispbackend.duckdns.org/login";
-		const apiUrl = "http://127.0.0.1:8069/api/users/authenticate";
+	if (
+		localStorage.getItem("loggedIn") == false ||
+		localStorage.getItem("loggedIn") == null
+	) {
+		loginFailure();
+	} else {
+		try {
+			//const apiUrl = "https://whispbackend.duckdns.org/login";
+			const apiUrl = "http://127.0.0.1:8069/api/anime/";
 
-		// Get the form data
-		const formData = new FormData(form);
-		console.log(form);
+			// Send a POST request to your backend server
+			const loginResponse = await fetch(apiUrl, {
+				method: "POST",
+				credentials: "include",
+				headers: {
+					"Content-Type": "application/json",
+					"Access-Control-Allow-Origin": "http://127.0.0.1:4100",
+					"Access-Control-Allow-Credentials": "true",
+				},
+				body: JSON.stringify({ title, rating }), // convert payload to JSON
+			});
 
-		// Send a POST request to your backend server
-		const loginResponse = await fetch(apiUrl, {
-			method: "POST",
-			credentials: "include",
-			headers: {
-				"Content-Type": "application/json",
-				"Access-Control-Allow-Origin": "http://127.0.0.1:4100",
-				"Access-Control-Allow-Credentials": "true",
-			},
-			body: JSON.stringify({ show, rating }), // convert payload to JSON
-		});
+			// error occured and login didn't work
+			if (!loginResponse.ok) {
+				if (loginResponse.status === 400) {
+					// wrong creds
+					console.log(loginResponse.status);
+					loginFailure(); //popup window
+				} else if (loginResponse.status === 403) {
+					// wrong perms
+					console.log(loginResponse.status);
+					permissionFailure(); //popup window
+				}
 
-		// error occured and login didn't work
-		if (!loginResponse.ok) {
-			if (loginResponse.status === 400) {
-				// wrong creds
-				console.log(loginResponse.status);
-				loginFailure(); //popup window
-			} else if (loginResponse.status === 403) {
-				// wrong perms
-				console.log(loginResponse.status);
-				permissionFailure(); //popup window
+				throw new Error("Login request was not successful");
 			}
-
-			throw new Error("Login request was not successful");
+			// login worked
+			else {
+				console.log("Rating added");
+				loginSuccess(); //popup window
+			}
+		} catch (error) {
+			console.error("Error:", error);
 		}
-		// login worked
-		else {
-			console.log("Rating added");
-			loginSuccess(); //popup window
-		}
-	} catch (error) {
-		console.error("Error:", error);
 	}
 }
 
