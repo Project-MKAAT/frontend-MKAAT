@@ -36,6 +36,8 @@ function loadShows(shows) {
 
 		// user rating
 		const userRating = document.createElement("p");
+
+		console.log(show.userRating.length);
 		userRating.textContent = `User Rating: ${show.userRating}`;
 
 		// putting it all together
@@ -46,8 +48,14 @@ function loadShows(shows) {
 
 		// ratings and what-not
 		showItem.appendChild(popularity);
-		showItem.appendChild(criticRating);
-		showItem.appendChild(userRating);
+		if (show.criticRating == 0) {
+			showItem.appendChild(criticRating);
+		}
+
+		console.log(show.userRating.length);
+		if (show.userRating.length > 0) {
+			showItem.appendChild(userRating);
+		}
 
 		// Append the showItem to the videoGrid
 		videoGrid.appendChild(showItem);
