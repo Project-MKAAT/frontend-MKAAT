@@ -95,6 +95,9 @@ async function sort(criteria, isReversed) {
 		});
 
 		const shows = await response.json();
+		shows.reverse();
+
+		console.log(shows.reverse())
 		loadShows(shows);
 	} catch (error) {
 		console.error("Error loading videos:", error);
