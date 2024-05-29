@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // sort shows
-async function sort(criteria, isReversed) {
+async function sort(criteria) {
 	try {
 		clearShows();
 
@@ -90,14 +90,13 @@ async function sort(criteria, isReversed) {
 			},
 			body: JSON.stringify({
 				criteria: criteria,
-				isReversed: isReversed,
 			}), // convert payload to JSON
 		});
 
 		let shows = await response.json();
 		shows.reverse();
 
-		console.log(shows.reverse())
+		console.log(shows.reverse());
 		loadShows(shows);
 	} catch (error) {
 		console.error("Error loading videos:", error);
