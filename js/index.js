@@ -36,8 +36,6 @@ function loadShows(shows) {
 
 		// user rating
 		const userRating = document.createElement("p");
-
-		console.log(show.userRating.length);
 		userRating.textContent = `User Rating: ${show.userRating}`;
 
 		// putting it all together
@@ -52,8 +50,8 @@ function loadShows(shows) {
 			showItem.appendChild(criticRating);
 		}
 
-		console.log(show.userRating.length);
-		if (show.userRating.length > 0) {
+		if (show.userRating.length != 0) {
+			console.log(show.userRating);
 			showItem.appendChild(userRating);
 		}
 
