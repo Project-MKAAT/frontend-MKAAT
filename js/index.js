@@ -50,7 +50,7 @@ function loadShows(shows) {
 			showItem.appendChild(criticRating);
 		}
 
-		if (show.userRating.length != 0) {
+		if (show.userRating != 0) {
 			console.log(show.userRating);
 			showItem.appendChild(userRating);
 		}
@@ -78,7 +78,7 @@ async function sort(criteria, isReversed) {
 	try {
 		clearShows();
 
-		const apiUrl = "http://127.0.0.1:8069/api/anime/getsorted";
+		const apiUrl = "http://127.0.0.1:8069/api/trending/getsorted";
 
 		const response = await fetch(apiUrl, {
 			method: "POST",
