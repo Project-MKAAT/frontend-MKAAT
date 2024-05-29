@@ -94,7 +94,7 @@ async function sort(criteria, isReversed) {
 			}), // convert payload to JSON
 		});
 
-		const shows = await response.json();
+		let shows = await response.json();
 		shows.reverse();
 
 		console.log(shows.reverse())
