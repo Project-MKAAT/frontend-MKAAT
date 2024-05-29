@@ -68,7 +68,7 @@ async function submitForm() {
 
 		// error occured and login didn't work
 		if (!loginResponse.ok) {
-			if (loginResponse.status === 401) {
+			if (loginResponse.status === 400) {
 				// wrong creds
 				console.log(loginResponse.status);
 				loginFailure(); //popup window
