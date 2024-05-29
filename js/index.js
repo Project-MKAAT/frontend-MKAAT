@@ -22,6 +22,10 @@ function loadShows(shows) {
 		const releaseDate = document.createElement("p");
 		releaseDate.textContent = `Release Date: ${show.release}`;
 
+		// popularity
+		const popularity = document.createElement("p");
+		popularity.textContent = `Popularity Score: ${show.popularity}`;
+
 		// genre
 		const genre = document.createElement("p");
 		genre.textContent = `Genre: ${show.genre}`;
@@ -35,9 +39,13 @@ function loadShows(shows) {
 		userRating.textContent = `User Rating: ${show.userRating}`;
 
 		// putting it all together
+		// major metadata
 		showItem.appendChild(title);
 		showItem.appendChild(releaseDate);
-		showItem.appendChild(genre);
+		// showItem.appendChild(genre);
+
+		// ratings and what-not
+		showItem.appendChild(popularity);
 		showItem.appendChild(criticRating);
 		showItem.appendChild(userRating);
 
@@ -49,9 +57,10 @@ function loadShows(shows) {
 // Load videos when the page is loaded
 document.addEventListener("DOMContentLoaded", async () => {
 	try {
-		const apiUrl = "http://127.0.0.1:8069/api/anime/";
+		const apiUrl = "http://127.0.0.1:8069/api/trending/";
 		const response = await fetch(apiUrl);
 		const shows = await response.json();
+		console.log(shows);
 		loadShows(shows);
 	} catch (error) {
 		console.error("Error loading videos:", error);
