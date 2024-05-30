@@ -1,3 +1,4 @@
+const uid = localStorage.getItem("uid")
 // 400 error
 function loginFailure() {
 	// the login form elements
@@ -41,59 +42,56 @@ function loginSuccess() {
 }
 
 async function submitForm() {
-	// get the elements (username, password, etc)
-	const title = document.getElementById("showField").value;
-	const rating = document.getElementById("ratingField").value;
+    // get the elements (title and rating)
+    const title = document.getElementById("showField").value;
+    const rating = document.getElementById("ratingField").value;
+    const uid = localStorage.getItem("uid"); // Assuming you have a user ID stored in localStorage
 
-	if (
-		localStorage.getItem("loggedIn") == false ||
-		localStorage.getItem("loggedIn") == null
-	) {
-		loginFailure();
-	} else {
-		try {
-			//const apiUrl = "https://whispbackend.duckdns.org/login";
-			const apiUrl = "http://anime.stu.nighthawkcodingsociety.com/api/anime/";
+    if (!uid || localStorage.getItem("loggedIn") === "false" || localStorage.getItem("loggedIn") === null) {
+        loginFailure();
+    } else {
+        try {
+            const apiUrl = "http://127.0.0.1:8069/api/trending/userRating";
 
-			// Send a POST request to your backend server
-			const loginResponse = await fetch(apiUrl, {
-				method: "POST",
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-					"Access-Control-Allow-Origin": "http://127.0.0.1:4100",
-					"Access-Control-Allow-Credentials": "true",
-				},
-				body: JSON.stringify({ title, rating }), // convert payload to JSON
-			});
+            // Send a POST request to your backend server
+            const response = await fetch(apiUrl, {
+                method: "POST",
+                credentials: "include",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ uid, name: title, rating: parseFloat(rating) }) // convert payload to JSON
+            });
 
-			// error occured and login didn't work
-			if (!loginResponse.ok) {
-				if (loginResponse.status === 400) {
-					// wrong creds
-					console.log(loginResponse.status);
-					loginFailure(); //popup window
-				} else if (loginResponse.status === 403) {
-					// wrong perms
-					console.log(loginResponse.status);
-					permissionFailure(); //popup window
-				}
+            // error occurred and login didn't work
+            if (!response.ok) {
+                if (response.status === 400) {
+                    // wrong creds
+                    console.log(response.status);
+                    loginFailure(); //popup window
+                } else if (response.status === 403) {
+                    // wrong perms
+                    console.log(response.status);
+                    permissionFailure(); //popup window
+                } else {
+                    console.log("Unexpected status:", response.status);
+                }
 
-				throw new Error("Login request was not successful");
-			}
-			// login worked
-			else {
-				console.log("Rating added");
-				loginSuccess(); //popup window
-			}
-		} catch (error) {
-			console.error("Error:", error);
-		}
-	}
+                throw new Error("Login request was not successful");
+            }
+            // login worked
+            else {
+                console.log("Rating added");
+                loginSuccess(); //popup window
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    }
 }
 
 const form = document.getElementById("myForm");
 form.addEventListener("submit", function (event) {
-	event.preventDefault();
-	submitForm();
+    event.preventDefault();
+    submitForm();
 });
