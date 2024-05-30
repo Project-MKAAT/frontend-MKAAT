@@ -48,7 +48,7 @@ async function submitForm() {
 
 	try {
 		//const apiUrl = "https://whispbackend.duckdns.org/login";
-		const apiUrl = "http://127.0.0.1:8069/api/users/authenticate";
+		const apiUrl = "http://anime.stu.nighthawkcodingsociety.com/api/users/authenticate";
 
 		// Get the form data
 		const formData = new FormData(form);

@@ -63,7 +63,7 @@ function loadShows(shows) {
 // Load videos when the page is loaded
 document.addEventListener("DOMContentLoaded", async () => {
 	try {
-		const apiUrl = "http://127.0.0.1:8069/api/trending/";
+		const apiUrl = "http://anime.stu.nighthawkcodingsociety.com/api/trending/";
 		const response = await fetch(apiUrl);
 		const shows = await response.json();
 		console.log(shows);
@@ -78,7 +78,7 @@ async function sort(criteria) {
 	try {
 		clearShows();
 
-		const apiUrl = "http://127.0.0.1:8069/api/trending/getsorted";
+		const apiUrl = "http://anime.stu.nighthawkcodingsociety.com/api/trending/getsorted";
 
 		const response = await fetch(apiUrl, {
 			method: "POST",

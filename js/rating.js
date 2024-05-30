@@ -53,7 +53,7 @@ async function submitForm() {
 	} else {
 		try {
 			//const apiUrl = "https://whispbackend.duckdns.org/login";
-			const apiUrl = "http://127.0.0.1:8069/api/anime/";
+			const apiUrl = "http://anime.stu.nighthawkcodingsociety.com/api/anime/";
 
 			// Send a POST request to your backend server
 			const loginResponse = await fetch(apiUrl, {

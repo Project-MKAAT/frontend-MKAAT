@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	deleteAccount.addEventListener("click", async function (event) {
 		event.preventDefault();
 		try {
-			const apiUrl = "http://127.0.0.1:8069/api/users/update";
+			const apiUrl = "http://anime.stu.nighthawkcodingsociety.com/api/users/update";
 
 			// post request to backend
 			const deleteAccount = await fetch(apiUrl, {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		event.preventDefault();
 		try {
 			// const apiUrl = "http://127.0.0.1:8069"
-			const apiUrl = "http://127.0.0.1:8069/api/users/update";
+			const apiUrl = "http://anime.stu.nighthawkcodingsociety.com/api/users/update";
 			const email = document.getElementById("emailField").value; // the new email to change
 
 			// post request to backend
