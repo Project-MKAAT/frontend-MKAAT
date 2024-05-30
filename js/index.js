@@ -42,7 +42,7 @@ function loadShows(shows) {
 		// major metadata
 		showItem.appendChild(title);
 		showItem.appendChild(releaseDate);
-		// showItem.appendChild(genre);
+		showItem.appendChild(genre);
 
 		// ratings and what-not
 		showItem.appendChild(popularity);
